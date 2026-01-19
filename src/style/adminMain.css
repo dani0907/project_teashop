@@ -1,0 +1,371 @@
+/* ************************************ */
+/* ********* admin btn style ********** */
+/* ************************************ */
+.btnStyle{
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+.btnStyle:hover{
+ background: #555;
+ color: #FFFFFF;
+}
+/* ********************************* */
+/* ********* admin header ********** */
+/* ********************************* */
+
+#adminHeader{
+  height: 88px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: #333;
+  /* border-bottom: 1px solid #999; */
+  transition: all 0.2s ease-in-out;
+}
+
+#adminHeader .headerInner{
+  /* max-width: 1455px;
+  min-width: 1000px; */
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+#adminHeader .adminLogo{
+  font-size: 20pt;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+#adminHeader .adminIcon{
+  margin-right: 10px;
+}
+#adminHeader .backToShop{
+  text-decoration: underline;
+  color: #999;
+  transition: all 0.3s ease-in-out;
+}
+#adminHeader .backToShop:hover{
+  color: #e9e9e9;
+}
+
+.adminMain{
+  position: relative;
+  /* max-width: 1455px; */
+  /* min-width: 1000px; */
+  margin: 0 auto;
+  padding-top: 88px;
+  display: flex;
+  top: 88px;
+}
+
+/* ************************** */
+/* ********admin Nav********* */
+/* ************************** */
+.adminNav{
+  display: block;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  min-width: 300px;
+  height: 100vh;
+  background-color: #555;
+}
+.adNavInner{
+  font-size: 20pt;
+  color: #e9e9e9;
+}
+.adNavUl{
+  width: 100%;
+}
+.adNavLi{
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.adNavLi:hover,
+.adNavLi.on
+{
+  background-color: #333333;
+}
+.adNavLi > a{
+  display: block;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+/* ************************** */
+/* ********admin Content********* */
+/* ************************** */
+
+.adminContent{
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 300px;
+  flex: 1;
+  width: calc(100% - 300px);
+  /* min-width: 900px; */
+  background-color: #FFFFFF;
+}
+
+.innerContainer{
+  width: 100%;
+  padding: 30px;
+}
+.innerContainer .adminTitle{
+  font-size: 18pt;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #555;
+}
+
+/* *********************************** */
+/* ******** adminProductList ********* */
+/* *********************************** */
+
+.innerContainer.productList .productListCon{
+  margin-bottom: 20px;
+}
+.innerContainer.productList .productListBox{
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #000000;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.innerContainer.productList .productImgBox{
+  width: 60px;
+  height: 60px;
+}
+.innerContainer.productList .productImg{
+  width: 100%;
+  height: 100%;
+  
+}
+.innerContainer.productList .productTextBox{
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.innerContainer.productList .productInfo{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+.innerContainer.productList .prodNm{
+  margin-right: 20px;
+  font-weight: 500;
+}
+.innerContainer.productList .prodPrice{
+  margin-right: 20px;
+}
+
+.innerContainer.productList .newProdBtnBox{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.innerContainer.productList .newProdBtn{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.innerContainer.productList .newProdBtn:hover{
+ background: #555;
+ color: #FFFFFF;
+}
+
+/* *********************************** */
+/* ******** adminProduct ************* */
+/* *********************************** */
+
+.productEditCon{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.productEditCon .uploadImgBox{
+  width: 500px;
+  min-height: 300px;
+  display: block;
+  margin: 0 auto 20px;
+  border: 1px solid #999;
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+}
+.productEditCon .uploadImg{
+  display: block;
+  position: absolute;
+  padding: 5px;
+  width: 100%;
+  max-height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  object-fit:contain;
+}
+.productEditCon .uploadImgText{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  text-align: center;
+  line-height: 300px;
+  color: #555;
+}
+.productEditCon .prodConList{
+  margin-bottom: 15px;
+  display: flex;
+  padding: 5px 0;
+  width: 100%;
+}
+.productEditCon .prodConList input {
+  flex: 1;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 10px;
+}
+.productEditCon .prodConList textarea{
+  flex: 1;
+  height: 300px;
+}
+.productEditCon .labelText{
+  width: 200px;
+  display: inline-block;
+  font-size: 16px;
+}
+.productEditCon .prodCatList{
+  width: 300px;
+  padding: 10px;
+}
+
+.productEditCon .prodSaveBtn{
+  padding: 10px;
+  width: 100%;
+}
+
+
+/* *********************************** */
+/* ******** adminUser ************* */
+/* *********************************** */
+
+.adminUser .userListCon{
+  width: 100%;
+}
+.adminUser .userDataBox{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #555;
+  padding: 5px 0;
+}
+.adminUser .boxLeft{
+  display: block;
+  margin-right: 10px;
+}
+.adminUser .userIcon{
+  font-size: 50px;
+  padding: 10px;
+  color: #555;
+}
+.adminUser .boxRight{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.adminUser .userName{
+  font-size: 15pt;
+  font-weight: 500;
+}
+.adminUser .boxRMiddle span{
+  margin-right: 20px;
+  position: relative;
+}
+.adminUser .boxRMiddle span::before{
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 15%;
+  height: 70%;
+  width: 1.5px;
+  background-color: #555;
+}
+
+.adminUser .boxRMiddle span:last-child:before{
+  height: 0;
+  width: 0;
+  background-color: transparent;
+}
+
+
+/* *********************************** */
+/* ******** adminDashboard ************* */
+/* *********************************** */
+.todaysSaleCon,
+.weeklySalesCon,
+.recentProductCon{
+  width: 100%;
+  padding: 20px; 
+  margin-bottom: 50px;
+  border: 2px solid #e9e9e9;
+  border-radius: 10px;
+}
+ .dashboardTitle{
+  font-size: 16pt;
+  margin-bottom: 20px;
+}
+
+.chartBox{
+  width: 100%;
+  height: 300px;
+}
+.recentProBox{
+  width: 100%;
+}
+.recentProList{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  /* padding: 10px; */
+  position: relative;
+}
+.recentProList::before{
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: #999;
+  border-radius: 100px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.recentProImg{
+  width: 50px;
+  height: 50px;
+  background: #e9e9e9;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

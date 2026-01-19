@@ -1,0 +1,190 @@
+*, *:after,*:before{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.5;
+  color: #191919;
+  font-family: "omnes-variable", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+#header{
+  height: 88px;
+  width: 100%;
+  min-width: 1455px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: #fff;
+  border-bottom: 1px solid #999;
+  transition: all 0.2s ease-in-out;
+}
+#header.on{
+  background: #819A91;
+  color: #fff;
+}
+#header .headerInner{
+  max-width: 1455px;
+  min-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* #logo a img{
+  width: 250px;
+} */
+ #logo{
+  width: 250px;
+  font-size: 40pt;
+  font-weight: bold;
+  color: #819A91;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+ }
+#header.on #logo{
+  color: #FFFFFF;
+}
+
+#gnb {
+ flex-grow: 1;
+ position: relative;
+ height: 100%;
+}
+#gnb:before {
+  content: '';
+  position: absolute;
+  top: 88px;
+  left: -250px;
+  height: 350px;
+  display: none;
+  width: 1455px;
+  background-color: #ddd;
+  z-index: -1;
+  transition: 0.3s ease;
+}
+#header #gnb .gnbList{
+  display: flex;
+  /* position: relative; */
+  height: 100%;
+  top: 0;
+  left: 0;
+  align-items: center;
+}
+#header #gnb .gnbList li{
+  margin-right: 20px;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  /* transform: translateY(-50%); */
+  position: relative;
+}
+#header #gnb .gnbList li:last-child{
+  margin-right: 0;
+}
+#header #gnb .gnbList .headDetail{
+  display: none;
+  width: 1455px;
+  /* display: flex; */
+  position: absolute;
+  top: 50px;
+  left: -250px;
+  padding: 10px 20px;
+}
+#header #gnb .gnbList .headDetail .hDetailList{
+  margin: 10px 10px 0 0;
+  width: 22%;
+}
+#header #gnb .headDetail h3{
+  font-size: 18px;
+  font-weight : 500;
+  margin-bottom: 5px;
+}
+#header #gnb .depth02 {
+  display: block;
+}
+#header #gnb .depth02 li{
+  padding: 5px 0;
+}
+#header #gnb .gnbList li a i{
+  margin-left: 5px;
+}
+#header #headIcons{
+  display: flex;
+  vertical-align: middle;
+  font-size: 20px;
+}
+#header #headIcons div{
+  margin-left: 10px;
+  
+}
+
+#header .loginNm{
+  margin-right: 10px;
+}
+#header .logoutBtn{
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 14pt;
+  text-decoration: underline;
+  color: #999999;
+}
+#header.on .logoutBtn{
+  color: #FFFFFF;
+}
+
+
+/* ********************************* */
+/* ************ footer ************* */
+/* ********************************* */
+#footer{
+  width: 100%;
+  background-color: #819A91;
+  color: #ffffff;
+}
+
+#footer .footContainer{
+  display: flex;
+  flex-direction: row;
+  padding: 40px 30px;
+  align-items: flex-start;
+}
+#footer .footLeft, #footer .footMid{
+  margin-right: 20px;
+  flex: 1;
+}
+#footer .footRight{
+  flex:2;
+}
+#footer .footTitle{
+  font-size: 20px;
+}
+#footer .footEmailBox{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#footer .footEmailInput{
+  padding: 10px;
+  border-radius: 30px;
+  border: inherit;
+  margin-right: 5px;
+}
+#footer .footEmailBtn{
+  display: block;
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  background-color: inherit;
+  color: #ffffff;
+}

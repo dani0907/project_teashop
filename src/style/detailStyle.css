@@ -1,0 +1,122 @@
+/* ******************************************* */
+/* ************ productDetail.jsx ************ */
+/* ******************************************* */
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+input[type=number] {
+    appearance: none;
+}
+
+.detailCon{
+  width: 100%;
+  min-height: calc(100vh - 300px);
+  display: flex;
+  align-items: center;
+}
+
+.detailImgBox{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.detailImgBox .imgInner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #999;
+  border-radius: 10px;
+  margin-right: 50px;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+}
+.detailImgBox .detailImg{
+  max-width: 350px;
+}
+.detailTextBox{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.detailInfo{
+  width: 100%;
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
+}
+.detailNm{
+  font-size: 18pt;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.detailPrice{
+  display: block;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #999;
+}
+.detailDesc{
+  margin-bottom: 40px;
+}
+
+.detailSale{
+  text-decoration: line-through;
+  margin-left: 5px;
+  font-style: italic;
+  color: #999;
+}
+
+.cartCountBox .countDown,
+.cartCountBox .countUp
+{
+  width: 30px;
+  height: 30px;
+  background: #819A91;
+  border: 1px solid #819A91;
+  color: #FFFFFF;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.cartCountBox .countDown{
+  border-radius: 30px 0 0 30px;
+}
+.cartCountBox .countUp{
+  border-radius: 0 30px 30px 0;
+}
+.cartCountBox .countDown:hover,
+.cartCountBox .countUp:hover{
+  background: #819A91;
+}
+.cartCountBox .cartCount{
+  padding: 10px;
+  height: 30px;
+  width: 50px;
+  border: 2px solid #819A91;
+  text-align: center;
+}
+.addCartBtn{
+  cursor: pointer;
+  font-size: 15pt;
+  color: #819A91;
+  background: #FFFFFF;
+  border: 2px solid #819A91;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+}
+.addCartBtn:hover{
+  color: #FFFFFF;
+  background: #819A91;
+}
+.detailBtnBox{
+  margin-top: 20px;
+}

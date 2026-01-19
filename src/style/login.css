@@ -1,0 +1,98 @@
+/* ******************************************* */
+/* login.jsx */
+/* ******************************************* */
+.loginInner{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginCon{
+  padding: 50px;
+  border: 1px solid #999;
+  border-radius: 10px;
+}
+
+.loginCon h2{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #999;
+}
+.loginCon .loginBox{
+  display: flex;
+  /* justify-content: space-between; */
+
+  margin-bottom: 20px;
+}
+.loginCon .loginInputBox{
+  display: block;
+  margin-right: 20px;
+}
+
+.loginCon .loginInputBox .logInputType{
+  display: inline-block;
+  width: 30px;
+}
+
+.loginInner .registBtn{
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ******************************************* */
+/* signUp.jsx */
+/* ******************************************* */
+
+.signUpInner{
+  display: block;
+  margin: 30px auto 30px;
+  width: 80%;
+  min-width: 900px;
+  padding: 60px;
+  border: 1px solid #999;
+}
+
+.signUpInner h2{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #999;
+}
+.signUpBox{
+  text-align: center;
+}
+
+.signInputBox > label{
+  display: block;
+  width: 100%;
+  font-size: 15pt;
+  margin-bottom: 20px;
+}
+.signUpType{
+  display: inline-block;
+  min-width: 150px;
+  text-align: left;
+}
+.signUpInput{
+  min-width: 500px;
+  padding: 10px;
+}
+.signUpInner .registerBtn{
+  cursor: pointer;
+  padding: 10px;
+  font-size: 15pt;
+  margin-top: 30px;
+  background: #FFFFFF;
+  border: 2px solid #819A91;
+  border-radius: 10px;
+  color: #819A91;
+  transition: all 0.24s ease-in-out;
+}
+.signUpInner .registerBtn:hover{
+  background: #819A91;
+  color: #FFFFFF;
+}

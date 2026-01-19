@@ -1,0 +1,288 @@
+/* ******************************************* */
+/* *************** cartPage.jsx ************** */
+/* ******************************************* */
+
+.cartInner{
+  width: 100%;
+}
+.innterTop{
+  font-size: 15pt;
+  font-weight: 300;
+  margin: 10px 0;
+}
+.otherTitle{
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: center;
+  /* padding-bottom: 10px; */
+  margin-bottom: 30px;
+  /* border-bottom: 2px solid #999999; */
+}
+
+.otherDataContainer{
+  /* width: 70%; */
+  min-height: calc(100vh - 300px);
+  margin: auto;
+}
+
+.cartDataBox{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  min-height: 500px;
+}
+.cartConLeft{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  padding-right: 30px;
+  min-height: 200px;
+}
+.cartConLeft::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #999999;
+}
+.cartConRight{
+  width: 40%;
+  padding-left: 30px;
+  padding-right: 10px;
+  min-height: 200px;
+}
+.conRightTitle{
+  font-size: 20pt;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.subtotalBox{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #9c9c9c;
+}
+.subtotalBox .priceTxt{
+  flex: 1;
+  font-size: 15pt;
+  font-weight: 500;
+}
+.subtotalBox .subTotal{
+  font-size: 14pt;
+}
+.checkoutBox{
+  width: 100%;
+}
+.checkoutdBtn{
+  position: relative;
+  width: 100%;
+  font-size: 15pt;
+  padding: 10px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1.5px solid #819A91;
+  background-image: linear-gradient(to right, #819A91 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0; 
+  transition: all 0.5s ease-out;
+
+}
+.checkoutdBtn:hover{
+  background-position: 0 0; /* Now the left half (#000) is visible */
+  color: #fff; 
+}
+
+/* CartList */
+
+.cartDataList{
+  display: flex;
+  align-items: center;
+  padding: 20px 10px ;
+  width: 100%;
+  height: 150px;
+  border-bottom: 1px solid #eeeeee;
+  /* border-radius: 10px; */
+  /* margin-bottom: 10px; */
+}
+.cartDataList:last-child{
+  border-bottom: none;
+}
+.cartDataList .cartImgBox{
+  display: flex;
+  width: 150px;
+  margin-right: 20px;
+}
+.cartDataList .cartImgBox .cartImg{
+ width: 150px;
+ aspect-ratio: 1 / 1;
+}
+.cartTextBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin-right: 20px;
+}
+.cartTextBox .cartName{
+  font-size: 18pt;
+  font-weight: 500;
+}
+.cartTextBox .cartPrice{
+  font-size: 15pt;
+}
+.cartTextBox .salePrice{
+  text-decoration: line-through;
+  margin-left: 5px;
+  font-style: italic;
+  color: #999;
+}
+.cartProductCount{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cartProductCount .cartCount{
+  /* font-size: 15pt; */
+}
+.cartRemove{
+  font-size: 13pt;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.cartInner .emptyCartInner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 300px);
+}
+.cartInner .emptyCartText{
+  font-size: 20pt;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.emptyCartBtn{
+  text-decoration: underline;
+  
+}
+
+
+/* ******************************************* */
+/* *************orderHistPage.jsx************* */
+/* ******************************************* */
+
+.orderHistInner .orderListBox {
+  width: 100%;
+  /* height: 100px; */
+  /* padding: 10px; */
+  border: 1.5px solid #819A91;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.orderHistInner .orderStateBox{
+  padding: 10px 20px;
+  /* border-bottom: 2px solid #999; */
+  font-size: 15pt;
+  display: flex;
+  background-color: #819A91;
+  border-radius: 8px 9px 0 0 ;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.orderHistInner .stateBoxLeft{
+  flex: 1;
+}
+
+.orderHistInner .orderState{
+  margin-right: 20px;
+  position: relative;
+}
+.orderHistInner .orderState::after{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 60%;
+  top: 50%;
+  transform: translateY(-30%);
+  right: -10px;
+  background-color: #eeeeee;
+}
+.orderHistInner .orderListInner{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #999;
+  padding: 10px 20px;
+}
+.orderHistInner .orderListInner:last-child{
+  border-bottom: none;
+}
+.orderHistInner .orderBoxLeft{
+  width: 100px;
+  /* height: 50px; */
+  margin-right: 20px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+.orderHistInner .orderHistImg{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  /* padding: 5px; */
+}
+.orderHistInner .orderBoxRight{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.orderHistInner .orderProduct{
+  font-size: 15pt;
+  font-weight: 500;
+  flex: 1;
+}
+.orderHistInner .orderQuant, .orderHistInner .orderPrice {
+ width: 20%;
+ text-align: right;
+}
+.orderHistInner .salePrice{
+  text-decoration: line-through;
+  font-style: italic;
+  color: #eeeeee;
+}
+
+
+
+/* ******************************************* */
+/* *************successPage.jsx************* */
+/* ******************************************* */
+
+.successInner{
+  width: 100%;
+  min-height: calc(100vh - 300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.successTitle{
+  font-size: 20pt;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.successOrderNumber{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.successOrderNumber > span{
+  font-weight: 500;
+}
