@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { supabase } from './supabaseClient';
 import Login from './pages/login';
 import SignUp from './pages/signUp';
@@ -24,7 +22,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 
 
-// const [instruments, setInstruments] = useState([]);
 function App() {
   let navigate = useNavigate();
   const [count, setCount] = useState(0);
@@ -65,29 +62,21 @@ function App() {
     console.log("cart count :: "+ product.tea_count);
 
     if(find){
-    
-      // console.log("cart count before :: "+JSON.stringify(cart));
       const updatedCart = cart.map((item) => item.tea_id == find.tea_id  ? {...item, tea_count:item.tea_count + product.tea_count} : item);
       setCart(updatedCart);
-      // console.log("cart count after :: "+JSON.stringify(cart));
       localStorage.setItem('cartData',JSON.stringify(updatedCart));
     } else{
       setCart([...cart, { ...product }]);
-      // console.log("cart count after :: "+JSON.stringify(cart));
       localStorage.setItem('cartData',JSON.stringify([...cart, { ...product }]));
     }
-    // localStorage.setItem('cartData',JSON.stringify(cart));
     alert("Added to your cart successfully!");
   }
   function updateCart(product,updown){
     const find = cart.find((item)=>item.tea_id == product.tea_id);
     console.log("cart count :: "+ product.tea_count);
     if(find){
-      // let cartCopy = [...cart];
-      // console.log("cart count before :: "+JSON.stringify(cart));
       const updatedCart = cart.map((item) => item.tea_id == find.tea_id  ? {...item, tea_count:Math.max(1,product.tea_count + updown)} : item);
       setCart(updatedCart);
-      // console.log("cart count after :: "+JSON.stringify(cart));
       localStorage.setItem('cartData',JSON.stringify(updatedCart));
     } 
     
@@ -125,35 +114,11 @@ function App() {
       console.log("App jsx loginData ::", parsedData);
 
       setLoginName(parsedData.firstName + " "+parsedData.lastName);
-      // console.log("loginname : " ,name);
-      // headList = {};
-      // headList.loginName(loginName);
-      // headList.loginToken(loginData.token);
-      // setHeadData(headList);
     }
   }
 
-  // function ShopButton(props){
-  //   let content = props.content;
-  //   let color = props.color;
-  //   let bgColor;
-  //   if (color == 'green') {
-  //     bgColor = '#819A91'
-  //   } else if (color == 'light'){
-  //     bgColor = '#A7C1A8'
-  //   } else {
-  //     bgColor = color;
-  //   }
-  //   return(
-  //     <button className='mainButton' style={{background : bgColor, borderColor:bgColor}}>{content}</button>
-  //   )
-  // };
-
   return (
     <>
-      
-      {/* <Header loginData={loginData} logoutFunc={logout} ></Header> */}
-      
         <Routes>
           <Route path='/' element={<UserLayout loginData={loginData} logoutFunc={logout} ></UserLayout>}>
             <Route index element={<MainPage mainProduct = {mainProduct}></MainPage>}></Route>
@@ -175,7 +140,6 @@ function App() {
           </Route>
 
         </Routes>
-      {/* <Footer></Footer> */}
     </>
   )
 }

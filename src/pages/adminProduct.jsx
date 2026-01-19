@@ -22,8 +22,6 @@ function AdminProduct(){
   let editMode = 'N';
   const [prevImg,setPrevImg] = useState('');
   const {id} = useParams();
-  // console.log("Admin id :: ",id);
-
   const [product, setProduct] = useState({
     name: '',
     price: 0,
@@ -41,9 +39,8 @@ function AdminProduct(){
   if(id || id != null){
     editMode='Y';
   }
-  // console.log("editMode : ", editMode);
-  // get tea category data from tea_category table
 
+  // get tea category data from tea_category table
   const [prodCat,setProdCat] = useState([]);
   useEffect(() => {
     async function categorySelect() {
@@ -100,8 +97,6 @@ function AdminProduct(){
     
     categorySelect();
   }, []);
-
-  // console.log("prevImg : ", prevImg);
 
   function imageChange(e){
     console.log("image",e.target);

@@ -15,7 +15,7 @@ body{
 #header{
   height: 88px;
   width: 100%;
-  min-width: 1455px;
+  padding: 0 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,8 +43,8 @@ body{
   width: 250px;
 } */
  #logo{
-  width: 250px;
-  font-size: 40pt;
+  width: 270px;
+  font-size: 30pt;
   font-weight: bold;
   color: #819A91;
   display: flex;

@@ -70,11 +70,6 @@ function ProductDetail({products, addCart}){
 
   return(
     <div className="mainContainer">
-      {
-            // cartData.map((item,index)=>(
-            //   <div key={index}>{`${item.tea_name} : ${item.tea_count}`}</div>
-            // ))
-          }
       <div className="innterTop">
         <Link to="/"><i class="bi bi-chevron-left"></i>Continue Shopping</Link>
       </div>

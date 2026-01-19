@@ -14,9 +14,6 @@ function Login(props){
   let loginData = {};
   const loginDataFunc = props.loginDataFunc;
   const signIn = async() => {
-    console.log("supabase객체:", supabase);
-    // console.log('signUp Function call');
-    // console.log(`email : ${email}, password : ${pw}, first_name : ${firstName}, last_name : ${lastName}, address : ${address}, phone : ${phone}`);
     const { data : authData, error:authError } = await supabase.auth.signInWithPassword({
       email: id,
       password: pw

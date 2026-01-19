@@ -38,7 +38,7 @@ function Header({loginData,logoutFunc}){
         <div id='logo'>
           {/* <a href="" ><img src="../public/image/davidtea_logo.svg" alt=""/></a> */}
           {/* <a href="/">Tea Shop</a> */}
-          <Link to="/">Tea Shop</Link>
+          <Link to="/">Tea Selection</Link>
         </div>
         <nav id="gnb">
           <ul className="gnbList">
