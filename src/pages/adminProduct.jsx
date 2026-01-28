@@ -230,7 +230,7 @@ function AdminProduct(){
     navigate('/admin/adminProductList');
   }
   return(
-    <div className="innerContainer product">
+    <div className="innerContainer admin product">
       <h2 className="adminTitle">{editMode == 'Y' ? 'Edit Product' : 'New Product'}</h2>
       <form className="productEditCon" onSubmit={editMode=='Y'? editSubmit:productSubmit}>
         <div className="uploadImgBox">

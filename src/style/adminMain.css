@@ -115,7 +115,7 @@
   background-color: #FFFFFF;
 }
 
-.innerContainer{
+.innerContainer.admin{
   width: 100%;
   padding: 30px;
 }

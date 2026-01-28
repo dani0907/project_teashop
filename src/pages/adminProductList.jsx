@@ -54,7 +54,7 @@ function AdminProductList(){
     }, []);
   let navigate = useNavigate();
   return(
-    <div className="innerContainer productList">
+    <div className="innerContainer admin productList">
       <h2 className="adminTitle">Product List</h2>
       <div className="productListCon">
         <ProdListBox productList={productList}></ProdListBox>

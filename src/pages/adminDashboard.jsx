@@ -58,7 +58,7 @@ function AdminDashboard(){
   },[])
   return(
     <div>
-      <div className="innerContainer">
+      <div className="innerContainer admin">
         <h2 className="adminTitle">Dashboard</h2>
         <div className='todaysSaleCon'>
           <h2 className='dashboardTitle'>Today's Sales</h2>

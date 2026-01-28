@@ -54,7 +54,7 @@ function AdminUser(){
     userListSelect();
   }, []);
   return(
-    <div className="innerContainer adminUser">
+    <div className="innerContainer admin adminUser">
       <h2 className="adminTitle">Admin User</h2>
       <div className="userListCon">
         <UserList userData={userData} ></UserList>
