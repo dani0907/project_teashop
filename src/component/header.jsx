@@ -54,7 +54,7 @@ function Header({loginData,logoutFunc}){
         <nav id="gnb">
           <ul className="gnbList">
             <li>
-              <a href="#" className='depth01'>Holiday<i class="bi bi-chevron-down"></i></a>
+              <Link to="/allproduct" className='depth01'>Holiday<i class="bi bi-chevron-down"></i></Link>
               {/* <div className='headDetail'>
                 <div className='hDetailList'>
                   <h3>holiday collection</h3>
@@ -88,7 +88,7 @@ function Header({loginData,logoutFunc}){
                 </div>
               </div> */}
             </li>
-            <li><a href="#" className='depth01'>Tea<i class="bi bi-chevron-down"></i></a></li>
+            <li><Link to="/allproduct" className='depth01'>Tea<i class="bi bi-chevron-down"></i></Link></li>
             {/* <li><a href="#" className='depth01'>Matcha Shop<i class="bi bi-chevron-down"></i></a></li>
             <li><a href="#" className='depth01'>Shop By<i class="bi bi-chevron-down"></i></a></li>
             <li><a href="#" className='depth01'>Teaware<i class="bi bi-chevron-down"></i></a></li>

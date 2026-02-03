@@ -67,7 +67,7 @@ function TeaListCon(){
           </button>
           <div className="teaDescript">
             <p>{tea.desc}</p>
-            <a className="teaDescriptBtn" href="#">{`Shop ${tea.title} Teas`}</a>
+            <Link to="/allproduct" className="teaDescriptBtn">{`Shop ${tea.title} Teas`}</Link>
           </div>
         </div>
       ))
@@ -119,7 +119,7 @@ function MainPage(mainProduct){
             <h2>a samll gifting made easy</h2>
             <div className="innerBox">
               <div className='holiGiftBox'>
-                <img className='holiGiftImg' src="../public/image/product/product_001.png" alt="" />
+                <img className='holiGiftImg' src="/image/product/product_001.png" alt="" />
                 <h4 className='holiGiftName'>instant hosting hits</h4>
                 <p className='holiGiftExpl'>Planners, RSVPers, coworkers, the list goes on. You can never have enough to offer up</p>
                 <div className="centerButton">
@@ -127,7 +127,7 @@ function MainPage(mainProduct){
                 </div>
               </div>
               <div className='holiGiftBox'>
-                <img className='holiGiftImg' src="../public/image/product/product_002.png" alt="" />
+                <img className='holiGiftImg' src="/image/product/product_002.png" alt="" />
                 <h4 className='holiGiftName'>instant hosting hits</h4>
                 <p className='holiGiftExpl'>Planners, RSVPers, coworkers, the list goes on. You can never have enough to offer up</p>
                 <div className="centerButton">
@@ -135,7 +135,7 @@ function MainPage(mainProduct){
                 </div>
               </div>
               <div className='holiGiftBox'>
-                <img className='holiGiftImg' src="../public/image/product/product_003.png" alt="" />
+                <img className='holiGiftImg' src="/image/product/product_003.png" alt="" />
                 <h4 className='holiGiftName'>instant hosting hits</h4>
                 <p className='holiGiftExpl'>Planners, RSVPers, coworkers, the list goes on. You can never have enough to offer up</p>
                 <div className="centerButton">
@@ -158,7 +158,7 @@ function MainPage(mainProduct){
             <div className='pbcCont pbcLeft'>
               <div className='pdcInner1'>
                 <div className="pdcInnerBox">
-                  <img className='pdcImg' src="../public/image/pdcImg01.png" alt="" />
+                  <img className='pdcImg' src="/image/pdcImg01.png" alt="" />
                   <div className="pdc1conBox">
                     <span className='pdcName'>loose leaf teas</span>
                     <ShopButton color="green" content="Shop Now" font="white"></ShopButton>
@@ -168,12 +168,12 @@ function MainPage(mainProduct){
               <div className='pdcInner2'>
                 <div className='pdcInnerBox'>
                   <span className='pdcName'>sachets</span>
-                  <img className='pdcImg' src="../public/image/pdcImg02.png" alt="" />
+                  <img className='pdcImg' src="/image/pdcImg02.png" alt="" />
                   <ShopButton color="green" content="Shop Now" font="white"></ShopButton>
                 </div>
                 <div className='pdcInnerBox'>
                   <span className='pdcName'>teaware</span>
-                  <img className='pdcImg' src="../public/image/pdcImg03.png" alt="" />
+                  <img className='pdcImg' src="/image/pdcImg03.png" alt="" />
                   <ShopButton color="green" content="Shop Now" font="white"></ShopButton>
                 </div>
               </div>
@@ -182,18 +182,18 @@ function MainPage(mainProduct){
               <div className='pdcInner2'>
                 <div className='pdcInnerBox'>
                   <span className='pdcName'>matcha</span>
-                  <img className='pdcImg' src="../public/image/pdcImg04.png" alt="" />
+                  <img className='pdcImg' src="/image/pdcImg04.png" alt="" />
                   <ShopButton color="green" content="Shop Now" font="white"></ShopButton>
                 </div>
                 <div className='pdcInnerBox'>
                   <span className='pdcName'>gifts</span>
-                  <img className='pdcImg' src="../public/image/pdcImg05.png" alt="" />
+                  <img className='pdcImg' src="/image/pdcImg05.png" alt="" />
                   <ShopButton color="green" content="Shop Now" font="white"></ShopButton>
                 </div>
               </div>
               <div className='pdcInner1'>
                 <div className="pdcInnerBox">
-                  <img className='pdcImg' src="../public/image/pdcImg06.png" alt="" />
+                  <img className='pdcImg' src="/image/pdcImg06.png" alt="" />
                   <div className="pdc1conBox">
                     <span className='pdcName'>caffeine-free</span>
                     <ShopButton color="green" content="Shop Now" font="white"></ShopButton>
@@ -268,7 +268,7 @@ function MainPage(mainProduct){
                 <TeaListCon></TeaListCon>
                 {/* <div className="teaConBox">
                   <div className="teaListCon">
-                    <img src="../public/image/teaListImg_01.avif" alt="" />
+                    <img src="/image/teaListImg_01.avif" alt="" />
                     <span>chamomile</span>
                     <button className="teaOpenBtn" onClick={teaListOpen()}><i class="bi bi-chevron-down"></i></button>
                   </div>
