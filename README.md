@@ -2,6 +2,10 @@
 
 A comprehensive online tea shop featuring a User Storefront and a Integrated Admin Dashboard.
 
+## 🔗 Live Demo
+
+[https://tea-selection.vercel.app](https://tea-selection.vercel.app)
+
 ## 📌 Project Overview
 
 This project is a full-stack e-commerce application designed for premium tea enthusiasts. It consists of two main parts:
