@@ -6,6 +6,21 @@ A comprehensive online tea shop featuring a User Storefront and a Integrated Adm
 
 [https://tea-selection.vercel.app](https://tea-selection.vercel.app)
 
+### 🔑 Test Accounts
+
+To explore both the customer and admin experiences, you may use the following credentials:
+
+**1. Administrator Account**
+(Access to Sales Dashboard & Inventory Management)
+
+- **ID:** `admin@gmail.com`
+- **PW:** `admin123`
+
+**2. Customer Account**
+
+- **ID:** `myemail@gmail.com`
+- **PW:** `1q2w3e4r%T`
+
 ## 📌 Project Overview
 
 This project is a full-stack e-commerce application designed for premium tea enthusiasts. It consists of two main parts:
