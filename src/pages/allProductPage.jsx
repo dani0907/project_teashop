@@ -1,6 +1,6 @@
 import { supabase } from '../supabaseClient';
 import { useState, useEffect } from "react";
-import { Link ,useNavigate} from 'react-router-dom';
+import { Link ,useNavigate, useSearchParams} from 'react-router-dom';
 
 
 function ProductBox(props){
@@ -25,22 +25,30 @@ function ProductBox(props){
 }
 function AllProductPage(){
   const [allProduct, setAllProduct] = useState([]);
+  const [searchParams] = useSearchParams();
+  const searchQuery = searchParams.get('search');
+
   useEffect(() => {
     async function productSelect() {
-      const { data, error } = await supabase.from("tea_product")
-      .select(`tea_name: name,
-              tea_id: product_id,
-              tea_description: description,
-              tea_price: price,
-              tea_img: image_url,
-              tea_stock: stock_quantity,
-              tea_on_sale: is_on_sale,
-              tea_sale_price: sale_price,
-              tea_category (
-                tea_cat_nm: tea_cats_nm
-              )
-            `);
-
+      let query = supabase.from("tea_product")
+        .select(`
+          tea_name: name,
+          tea_id: product_id,
+          tea_description: description,
+          tea_price: price,
+          tea_img: image_url,
+          tea_stock: stock_quantity,
+          tea_on_sale: is_on_sale,
+          tea_sale_price: sale_price,
+          tea_category (
+            tea_cat_nm: tea_cats_nm
+          )
+        `);
+      
+      if (searchQuery) {
+        query = query.ilike('name', `%${searchQuery}%`);
+      }
+      const { data, error } = await query;
       if (error) {
         console.error("Supabase connect error :", error);
       } else {
@@ -50,7 +58,7 @@ function AllProductPage(){
     }
 
     productSelect();
-  }, []);
+  }, [searchQuery]);
   return(
     <div className="mainContainer">
       <div className="mainInner">

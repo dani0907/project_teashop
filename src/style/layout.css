@@ -50,6 +50,7 @@ body{
   display: flex;
   align-items: center;
   /* justify-content: center; */
+  transition: all 0.2s ease-in-out;
  }
 #header.on #logo{
   color: #FFFFFF;
@@ -129,6 +130,7 @@ body{
   border: none;
   background: none;
   font-size: 17px;
+  transition: all 0.2s ease-in-out;
 }
 #header #headIcons div{
   height: 100%;
@@ -141,6 +143,10 @@ body{
   padding: 5px;
   border-radius: 30px;
   border: 1.5px solid ;
+  transition: all 0.2s ease-in-out;
+}
+#header.on #headIcons .serchInput{
+  border-color: #FFFFFF;
 }
 
 #header .loginNm{
@@ -154,7 +160,8 @@ body{
   text-decoration: underline;
   color: #999999;
 }
-#header.on .logoutBtn{
+#header.on .logoutBtn,
+#header.on .searchBtn{
   color: #FFFFFF;
 }
 

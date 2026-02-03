@@ -6,9 +6,6 @@ function Header({loginData,logoutFunc}){
   let navigate = useNavigate()
   let loginName;
   let myPage = "/login";
-  function setSearchClick(){
-    
-  }
 
   if(loginData != null){
     loginName = loginData.firstName + " " + loginData.lastName;
@@ -34,6 +31,17 @@ function Header({loginData,logoutFunc}){
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const setSearchClick = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim() !== "") {
+      navigate(`/allproduct?search=${searchTerm}`);
+    } else {
+      navigate('/allproduct');
+    }
+  };
 
   return(
     <header id='header' className={`${isScrolled ? 'on' : ''}`}>
@@ -94,7 +102,7 @@ function Header({loginData,logoutFunc}){
           {
             loginData?.adminYn === "Y" ? <div className="adminPgBtn"><Link to="/admin"><i class="bi bi-gear-wide-connected"></i></Link></div> : null
           }
-          <div id='searchBox'><input type="text" className="serchInput"/><button onClick={setSearchClick} className="searchBtn"><i class="bi bi-search"></i></button></div>
+          <div id='searchBox'><input type="text" className="serchInput"onChange={(e)=>setSearchTerm(e.target.value)}/><button onClick={setSearchClick} className="searchBtn"><i class="bi bi-search"></i></button></div>
           <div id='loginBtn'><Link to={myPage}><i class="bi bi-person"></i></Link></div>
           <div id='cartBtn'><Link to="/cart"><i class="bi bi-cart2"></i></Link></div>
         </div>
