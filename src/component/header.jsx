@@ -6,6 +6,9 @@ function Header({loginData,logoutFunc}){
   let navigate = useNavigate()
   let loginName;
   let myPage = "/login";
+  function setSearchClick(){
+    
+  }
 
   if(loginData != null){
     loginName = loginData.firstName + " " + loginData.lastName;
@@ -44,7 +47,7 @@ function Header({loginData,logoutFunc}){
           <ul className="gnbList">
             <li>
               <a href="#" className='depth01'>Holiday<i class="bi bi-chevron-down"></i></a>
-              <div className='headDetail'>
+              {/* <div className='headDetail'>
                 <div className='hDetailList'>
                   <h3>holiday collection</h3>
                   <ul className='depth02'>
@@ -75,13 +78,13 @@ function Header({loginData,logoutFunc}){
                     <li><a href="#">Under $80</a></li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
             </li>
             <li><a href="#" className='depth01'>Tea<i class="bi bi-chevron-down"></i></a></li>
-            <li><a href="#" className='depth01'>Matcha Shop<i class="bi bi-chevron-down"></i></a></li>
+            {/* <li><a href="#" className='depth01'>Matcha Shop<i class="bi bi-chevron-down"></i></a></li>
             <li><a href="#" className='depth01'>Shop By<i class="bi bi-chevron-down"></i></a></li>
             <li><a href="#" className='depth01'>Teaware<i class="bi bi-chevron-down"></i></a></li>
-            <li><a href="#" className='depth01'>Recipes<i class="bi bi-chevron-down"></i></a></li>
+            <li><a href="#" className='depth01'>Recipes<i class="bi bi-chevron-down"></i></a></li> */}
           </ul>
         </nav>
         <div id='headIcons'>
@@ -91,7 +94,7 @@ function Header({loginData,logoutFunc}){
           {
             loginData?.adminYn === "Y" ? <div className="adminPgBtn"><Link to="/admin"><i class="bi bi-gear-wide-connected"></i></Link></div> : null
           }
-          <div id='searchBtn'><a href="#"><i class="bi bi-search"></i></a></div>
+          <div id='searchBox'><input type="text" className="serchInput"/><button onClick={setSearchClick} className="searchBtn"><i class="bi bi-search"></i></button></div>
           <div id='loginBtn'><Link to={myPage}><i class="bi bi-person"></i></Link></div>
           <div id='cartBtn'><Link to="/cart"><i class="bi bi-cart2"></i></Link></div>
         </div>

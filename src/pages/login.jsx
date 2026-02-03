@@ -20,7 +20,7 @@ function Login(props){
     })
     if (authError) {
       console.error("login fail : ", authError.message);
-      alert(authError.message);
+      alert("Login failed.");
     } else {
       console.log("loginpage login success: ", authData);
       // console.log("login page user Data : ", data.user.user_metadata);
@@ -56,13 +56,15 @@ function Login(props){
       <div className='loginInner'>
         <div className="loginCon">
           <h2>Login</h2>
-          <div className="loginBox">
+          <form className="loginBox" onSubmit={(e) => {
+                                              e.preventDefault();
+                                              signIn();}}>
             <div className="loginInputBox">
-              <div className="logInputCon"><span className="logInputType">ID</span><input type="text" onChange={(e)=> {setId(e.target.value)}}></input></div>
-              <div className="logInputCon"><span className="logInputType">PW</span><input type="password" onChange={(e)=> {setPw(e.target.value)}}></input></div>
+              <div className="logInputCon"><span className="logInputType">ID</span><input type="text" onChange={(e)=> {setId(e.target.value)}} required></input></div>
+              <div className="logInputCon"><span className="logInputType">PW</span><input type="password" onChange={(e)=> {setPw(e.target.value)}} required></input></div>
             </div>
-            <button className="loginBtn" onClick={()=>signIn()}>Login</button>
-          </div>
+            <button type="submit" className="loginBtn">Login</button>
+          </form>
           <Link className="registBtn" to='/signUp'>Register</Link>
         </div>
 
