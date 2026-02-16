@@ -162,8 +162,8 @@ function CartPage({cartData,loginData,clearCart,updateCart,deleteCart}){
   } else{
     const totalPrice = cartData.reduce((acc, curVal)=>{
       return acc+=((curVal.tea_sale_yn == 
-        'Y' ? curVal.tea_sale_price : curVal.tea_price) * curVal.tea_count);
-    },0);
+        'Y' ? curVal.tea_sale_price : curVal.tea_price) * 100 * curVal.tea_count );
+    },0) / 100;
     console.log("totalPrice :: ",totalPrice);
     return(
       <div className="mainContainer">
