@@ -26,7 +26,7 @@ function AdminDashboard(){
         console.error("Supabase connect error :", salesrror);
       } else {
         console.log("Supabase connect success :", salesData);
-        total = salesData?.reduce((sum, item) => sum + item.total_price, 0) || 0;
+        total = salesData?.reduce((sum, item) => sum + item.cart_subtotal, 0) || 0;
         console.log("todays total : ",total);
       }
 
