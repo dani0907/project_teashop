@@ -4,7 +4,11 @@ A comprehensive online tea shop featuring a User Storefront and a Integrated Adm
 
 ## 🔗 Live Demo
 
-[https://tea-selection.vercel.app](https://tea-selection.vercel.app)
+**[https://tea-selection.vercel.app](https://tea-selection.vercel.app)**
+
+![Image](https://github.com/user-attachments/assets/f0609318-9a44-460f-af42-794c58f83b68)
+
+![Image](https://github.com/user-attachments/assets/de0dd962-a099-46b8-956a-554403eb31e3)
 
 ### 🔑 Test Accounts
 
