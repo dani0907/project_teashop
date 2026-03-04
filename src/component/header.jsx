@@ -1,18 +1,16 @@
 import { supabase } from "../supabaseClient";
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate, Outlet, useLocation} from 'react-router-dom';
 import { useState, useEffect } from 'react'
 
 function Header({loginData,logoutFunc}){
-  let navigate = useNavigate()
+  let navigate = useNavigate();
+  let location = useLocation();
   let loginName;
   let myPage = "/login";
 
   if(loginData != null){
     loginName = loginData.firstName + " " + loginData.lastName;
-    // console.log("header props : ", props);
-    console.log("header loginData : ",loginData);
     myPage="/order";
-    console.log("adminYn :: ",loginData.adminYn);
   }
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,14 +24,39 @@ function Header({loginData,logoutFunc}){
       }
     };
 
-    // 스크롤 이벤트 리스너 등록
+    // scroll event listener
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const [searchTerm, setSearchTerm] = useState("");
+  // mobile menu open/close
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) setMenuOpen(false); // 데스크탑으로 커지면 닫기
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // close the menu
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  // lock the scroll
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  // serach
+  const [searchTerm, setSearchTerm] = useState("");
   const setSearchClick = (e) => {
     e.preventDefault();
     if (searchTerm.trim() !== "") {
@@ -43,73 +66,127 @@ function Header({loginData,logoutFunc}){
     }
   };
 
-  return(
-    <header id='header' className={`${isScrolled ? 'on' : ''}`}>
-      <div className='headerInner'>
-        <div id='logo'>
-          {/* <a href="" ><img src="../public/image/davidtea_logo.svg" alt=""/></a> */}
-          {/* <a href="/">Tea Shop</a> */}
-          <Link to="/">Tea Selection</Link>
+  return (
+    <>
+      <header id='header' className={`${isScrolled ? 'on' : ''}`}>
+        <div className='headerInner'>
+
+          {/* logo */}
+          <div id='logo'>
+            <Link to="/">Tea Selection</Link>
+          </div>
+
+          {/* GNB - only for Desktop */}
+          {!isMobile && (
+            <nav id="gnb">
+              <ul className="gnbList">
+                <li>
+                  <Link to="/allproduct" className='depth01'>
+                    Holiday<i className="bi bi-chevron-down"></i>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/allproduct" className='depth01'>
+                    Tea<i className="bi bi-chevron-down"></i>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          )}
+
+          {/* header right */}
+          <div id='headIcons'>
+            {loginData != null && (
+              <div>
+                <span className="loginNm">{`welcome ${loginName}!`}</span>
+                <button className="logoutBtn" onClick={logoutFunc}>logout</button>
+              </div>
+            )}
+            {loginData?.adminYn === "Y" && (
+              <div className="adminPgBtn">
+                <Link to="/admin"><i className="bi bi-gear-wide-connected"></i></Link>
+              </div>
+            )}
+            {/* serach */}
+            {!isMobile && (
+              <div id='searchBox'>
+                <input
+                  type="text"
+                  className="serchInput"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && setSearchClick(e)}
+                />
+                <button onClick={setSearchClick} className="searchBtn">
+                  <i className="bi bi-search"></i>
+                </button>
+              </div>
+            )}
+            <div id='loginBtn'><Link to={myPage}><i className="bi bi-person"></i></Link></div>
+            <div id='cartBtn'><Link to="/cart"><i className="bi bi-cart2"></i></Link></div>
+
+            {/* button - only in mobile */}
+            {isMobile && (
+              <button
+                className="hamburgerBtn"
+                onClick={() => setMenuOpen(prev => !prev)}
+                aria-label="메뉴 열기/닫기"
+              >
+                <i className={menuOpen ? "bi bi-x-lg" : "bi bi-list"} />
+              </button>
+            )}
+          </div>
+
         </div>
-        <nav id="gnb">
-          <ul className="gnbList">
-            <li>
-              <Link to="/allproduct" className='depth01'>Holiday<i class="bi bi-chevron-down"></i></Link>
-              {/* <div className='headDetail'>
-                <div className='hDetailList'>
-                  <h3>holiday collection</h3>
-                  <ul className='depth02'>
-                    <li><a href="#">Discover Holiday Gift Guide</a></li>
-                    <li><a href="#">Tea Wheels&Samplers</a></li>
-                    <li><a href="#">Stocking Stuffers</a></li>
-                    <li><a href="#">New Holiday Teas</a></li>
-                    <li><a href="#">Mug Market</a></li>
-                    <li><a href="#">Advent Calendars</a></li>
-                    <li><a href="#">Candy Cane Teas</a></li>
-                    <li><a href="#">Bundles</a></li>
-                  </ul>
-                </div>
-                <div className='hDetailList'>
-                  <h3>gifts by tea lover</h3>
-                  <ul className='depth02'>
-                    <li><a href="#">For Matcha Lovers</a></li>
-                    <li><a href="#">For Earl Grey Lovers</a></li>
-                    <li><a href="#">For Green Tea Lovers</a></li>
-                    <li><a href="#">For Caffeine-Free Lovers</a></li>
-                  </ul>
-                </div>
-                <div className='hDetailList'>
-                  <h3>gifts by price</h3>
-                  <ul className='depth02'>
-                    <li><a href="#">Under $20</a></li>
-                    <li><a href="#">Under $50</a></li>
-                    <li><a href="#">Under $80</a></li>
-                  </ul>
-                </div>
-              </div> */}
-            </li>
-            <li><Link to="/allproduct" className='depth01'>Tea<i class="bi bi-chevron-down"></i></Link></li>
-            {/* <li><a href="#" className='depth01'>Matcha Shop<i class="bi bi-chevron-down"></i></a></li>
-            <li><a href="#" className='depth01'>Shop By<i class="bi bi-chevron-down"></i></a></li>
-            <li><a href="#" className='depth01'>Teaware<i class="bi bi-chevron-down"></i></a></li>
-            <li><a href="#" className='depth01'>Recipes<i class="bi bi-chevron-down"></i></a></li> */}
-          </ul>
-        </nav>
-        <div id='headIcons'>
-          {
-            loginData != null ? <div><span className="loginNm">{`welcome ${loginName}!`}</span><button className="logoutBtn" onClick={()=>{logoutFunc()}}>logout</button></div> : null
-          }
-          {
-            loginData?.adminYn === "Y" ? <div className="adminPgBtn"><Link to="/admin"><i class="bi bi-gear-wide-connected"></i></Link></div> : null
-          }
-          <div id='searchBox'><input type="text" className="serchInput"onChange={(e)=>setSearchTerm(e.target.value)}/><button onClick={setSearchClick} className="searchBtn"><i class="bi bi-search"></i></button></div>
-          <div id='loginBtn'><Link to={myPage}><i class="bi bi-person"></i></Link></div>
-          <div id='cartBtn'><Link to="/cart"><i class="bi bi-cart2"></i></Link></div>
-        </div>
-      </div>
-      
-    </header>
-  )
+      </header>
+
+      {/* ===== 모바일 드로어 메뉴 ===== */}
+      {isMobile && (
+        <>
+          {/* 오버레이 */}
+          {menuOpen && (
+            <div className="mobileMenuOverlay" onClick={() => setMenuOpen(false)} />
+          )}
+
+          {/* 슬라이드 메뉴 */}
+          <div className={`mobileMenu${menuOpen ? ' open' : ''}`}>
+            {/* 검색창 */}
+            <div className="mobileSearchBox">
+              <input
+                type="text"
+                className="mobileSearchInput"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && setSearchClick(e)}
+              />
+              <button onClick={setSearchClick} className="searchBtn">
+                <i className="bi bi-search"></i>
+              </button>
+            </div>
+
+            {/* 메뉴 링크 */}
+            <ul className="mobileMenuList">
+              <li><Link to="/allproduct">Holiday</Link></li>
+              <li><Link to="/allproduct">Tea</Link></li>
+              <li><Link to={myPage}>{loginData ? 'My Page' : 'Login'}</Link></li>
+              <li><Link to="/cart">Cart</Link></li>
+              {loginData?.adminYn === "Y" && (
+                <li><Link to="/admin">Admin</Link></li>
+              )}
+              {loginData && (
+                <li>
+                  <button className="mobileLogoutBtn" onClick={() => { logoutFunc(); setMenuOpen(false); }}>
+                    Logout
+                  </button>
+                </li>
+              )}
+            </ul>
+          </div>
+        </>
+      )}
+    </>
+  );
 }
 
 export default Header;

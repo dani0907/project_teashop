@@ -210,3 +210,306 @@ body{
   background-color: inherit;
   color: #ffffff;
 }
+
+
+/* ================================= */
+/* ===== hamburger & mobile menu ======= */
+/* ================================= */
+
+.hamburgerBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #191919;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  margin-left: 8px;
+  transition: color 0.2s ease;
+}
+#header.on .hamburgerBtn {
+  color: #ffffff;
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  inset: 0;
+  top: 55px;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 98;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 55px;
+  right: 0;
+  width: 75%;
+  max-width: 300px;
+  height: calc(100vh - 55px);
+  background: #ffffff;
+  z-index: 99;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+/* mobile search box */
+.mobileSearchBox {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #999;
+  border-radius: 30px;
+  padding: 6px 12px;
+  margin-bottom: 20px;
+}
+.mobileSearchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+.mobileSearchBox .searchBtn{
+  border: none;
+  background: none;
+}
+
+/* mobile menu list */
+.mobileMenuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mobileMenuList li {
+  border-bottom: 1px solid #eeeeee;
+}
+.mobileMenuList li a,
+.mobileMenuList li button {
+  display: block;
+  padding: 16px 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #191919;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.mobileMenuList li a:hover,
+.mobileMenuList li button:hover {
+  color: #819A91;
+}
+.mobileLogoutBtn {
+  color: #999 !important;
+  font-weight: 400 !important;
+}
+
+
+/* ================================= */
+/* ===== footer (mobile) ===== */
+/* ================================= */
+
+
+.footSection {
+  flex: 1;
+  margin-right: 20px;
+}
+.footSection:last-child {
+  margin-right: 0;
+}
+
+
+.footAccordionBtn {
+  display: none;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 0;
+  cursor: pointer;
+  color: #ffffff;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.footAccordionBtn .footTitle {
+  margin-bottom: 0; 
+}
+
+.footAccordionBody {
+  overflow: hidden;
+}
+
+/* ================================= */
+/* ===== RESPONSIVE - layout.css === */
+/* ================================= */
+
+@media (max-width: 1024px) {
+  #header .headerInner {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  #logo {
+    width: 200px;
+    font-size: 22pt;
+  }
+  #header #gnb .gnbList li {
+    margin-right: 12px;
+  }
+  #footer .footContainer {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 768px) {
+  #header {
+    height: 60px;
+    padding: 0 15px;
+  }
+  #header .headerInner {
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
+  }
+  #logo {
+    width: auto;
+    min-width: 0;
+    font-size: 16pt;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  /* GNB 아이템 간격 축소 */
+  #header #gnb .gnbList li {
+    margin-right: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  #header #headIcons {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  #header #headIcons .serchInput {
+    width: 100px;
+    font-size: 13px;
+  }
+  #footer .footContainer {
+    flex-direction: column;
+    padding: 0;       
+  }
+  #footer .footSection {
+    flex: none;
+    width: 100%;
+    margin-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  #footer .footAccordionBtn {
+    display: flex;
+  }
+  #footer .footAccordion .footAccordionBody {
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  #footer .footAccordion.open .footAccordionBody {
+    max-height: 500px;
+  }
+  #footer .footAccordion .footAccordionBody ul {
+    padding: 8px 0 16px;
+  }
+  #footer .footRight {
+    flex: none;
+    width: 100%;
+    margin-right: 0;
+    padding: 20px;
+  }
+  #footer .footSection .footTitle {
+    display: block;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  #header {
+    height: 55px;
+    padding: 0 10px;
+  }
+  #header .headerInner {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  #logo {
+    font-size: 13pt;
+    width: auto;
+    flex-shrink: 0;
+  }
+  #header #gnb .gnbList li {
+    margin-right: 6px;
+    font-size: 12px;
+  }
+  #header #headIcons .serchInput {
+    width: 80px;
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+  #header #headIcons {
+    font-size: 14px;
+    height: 40px;
+  }
+  #header #headIcons div {
+    margin-left: 6px;
+  }
+}
+@media (max-width: 480px) {
+  #header {
+    height: 55px;
+    padding: 0 12px;
+  }
+  #header .headerInner {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  #logo {
+    font-size: 13pt;
+    flex-shrink: 0;
+  }
+  #gnb {
+    display: none;
+  }
+  #header #headIcons {
+    height: 40px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  /* 검색 인풋 적당한 너비 유지 */
+  #header #headIcons .serchInput {
+    width: 110px;
+    font-size: 12px;
+  }
+  #footer .footEmailBox {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #footer .footEmailInput {
+    margin-right: 0;
+    width: 100%;
+  }
+  #footer .footEmailBtn {
+    width: fit-content;
+  }
+  #footer .footRight {
+    padding: 16px;
+  }
+  #footer .footRight .footTitle {
+    font-size: 15px;
+  }
+}

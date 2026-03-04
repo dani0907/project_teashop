@@ -305,3 +305,181 @@
   text-decoration: underline;
   margin-top: 10px;
 }
+
+/* ================================= */
+/* ===== RESPONSIVE - main.css ===== */
+/* ================================= */
+@media (max-width: 1024px) {
+  #main {
+    padding-top: 88px;
+  }
+  .innerContainer.product .productBox {
+    width: calc(33.333% - 14px);
+  }
+  .innerContainer.holiGift .holiGiftBox {
+    width: calc(50% - 10px);
+    min-width: unset;
+  }
+  .innerContainer.review .reviewBox {
+    width: calc(50% - 10px);
+  }
+  .innerContainer.productBox .pbcCont {
+    min-width: unset;
+    width: 50%;
+  }
+  .innerContainer.teaList h3 {
+    font-size: 25pt;
+  }
+  .innerContainer.productBox .pdcInner1 .pdcImg {
+    width: 160px;
+  }
+  .innerContainer.productBox .pdcInner2 .pdcImg {
+    width: 130px;
+  }
+}
+@media (max-width: 768px) {
+  #main {
+    padding-top: 60px;
+  }
+  .mTopContainer,
+  .mTopContainer .topBox .thumInner {
+    height: 280px;
+  }
+  .mainInner .innerContainer h2 {
+    font-size: 18pt;
+    margin: 20px 0;
+  }
+  .mainInner .innerContainer .innerBox {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .innerContainer.product .productBox {
+    width: calc(50% - 8px);
+    padding: 30px 10px;
+  }
+
+  .innerContainer.holiGift .holiGiftBox {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .innerContainer.review .reviewBox {
+    width: 100%;
+  }
+
+  .innerContainer.productBox {
+    flex-direction: column;
+  }
+  .innerContainer.productBox .pbcCont {
+    width: 100%;
+    min-width: unset;
+  }
+  .innerContainer.productBox .pbcCont .pdcInner1 .pdcInnerBox {
+    height: auto;
+    min-height: 200px;
+    padding: 20px;
+  }
+  .innerContainer.productBox .pdcInner1 .pdcImg {
+    width: 160px;
+  }
+
+  .innerContainer.productBox .pdcInner2 {
+    display: flex;
+    flex-direction: row;
+  }
+  .innerContainer.productBox .pdcInnerBox {
+    height: auto;
+    min-height: 200px;
+    padding: 15px;
+    margin: 6px;
+  }
+  .innerContainer.productBox .pdcInner2 .pdcImg {
+    width: 120px;
+  }
+  .innerContainer.productBox .pdcInnerBox .pdcName {
+    font-size: 18pt;
+  }
+
+  .innerContainer.teaList .innerBox {
+    flex-direction: column;
+  }
+  .innerContainer.teaList .teaConLeft,
+  .innerContainer.teaList .teaConRight {
+    flex: none;
+    width: 100%;
+  }
+  .innerContainer.teaList h3 {
+    font-size: 20pt;
+    margin-bottom: 20px;
+  }
+
+  .innerContainer.advertise,
+  .innerContainer.advertise .addInner {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #main {
+    padding-top: 55px;
+  }
+  .mTopContainer,
+  .mTopContainer .topBox .thumInner {
+    height: 200px;
+  }
+  .mainInner .innerContainer h2 {
+    font-size: 15pt;
+  }
+  .mainInner .innerContainer .innerBox {
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .innerContainer.product .productBox {
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .innerContainer .productBox .productImg {
+    width: 60%;
+  }
+
+  .innerContainer.productBox .pdcInner2 {
+    flex-direction: column;
+  }
+  .innerContainer.productBox .pdcInnerBox {
+    height: auto;
+    min-height: 160px;
+    margin: 5px;
+    padding: 15px;
+  }
+  .innerContainer.productBox .pbcCont .pdcInner1 .pdcInnerBox {
+    flex-direction: column;
+    min-height: 180px;
+  }
+  .innerContainer.productBox .pdcInner1 .pdcImg {
+    width: 120px;
+  }
+  .innerContainer.productBox .pdcInner2 .pdcImg {
+    width: 90px;
+  }
+  .innerContainer.productBox .pdcInnerBox .pdcName {
+    font-size: 14pt;
+  }
+
+
+  .innerContainer.advertise,
+  .innerContainer.advertise .addInner {
+    height: 150px;
+  }
+
+  .innerContainer.teaList h3 {
+    font-size: 16pt;
+  }
+  .innerContainer.teaList .teaListCon {
+    font-size: 15px;
+  }
+  .innerContainer.teaList .teaListImg {
+    width: 60px;
+  }
+}

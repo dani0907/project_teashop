@@ -120,3 +120,64 @@ input[type=number] {
 .detailBtnBox{
   margin-top: 20px;
 }
+
+/* ================================= */
+/* == RESPONSIVE - detailStyle.css = */
+/* ================================= */
+
+
+@media (max-width: 768px) {
+  .detailCon {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 15px;
+  }
+  .detailImgBox {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .detailImgBox .imgInner {
+    margin-right: 0;
+    max-width: 100%;
+  }
+  .detailImgBox .detailImg {
+    max-width: 70%;
+  }
+  .detailTextBox {
+    width: 100%;
+    flex: none;
+  }
+  .detailNm {
+    font-size: 15pt;
+  }
+  .addCartBtn {
+    font-size: 13pt;
+    padding: 8px 16px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .detailCon {
+    padding: 0 10px;
+    min-height: unset;
+  }
+  .detailImgBox .detailImg {
+    max-width: 80%;
+  }
+  .detailNm {
+    font-size: 13pt;
+  }
+  .detailDesc {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  .addCartBtn {
+    width: 100%;
+    text-align: center;
+    font-size: 12pt;
+  }
+  .cartCountBox .cartCount {
+    width: 40px;
+  }
+}
