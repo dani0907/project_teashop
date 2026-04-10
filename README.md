@@ -37,7 +37,7 @@ This project is a full-stack e-commerce application designed for premium tea ent
 - **Frontend**: React (v18), React Router
 - **Backend/Database**: Supabase (BaaS)
 - **Data Visualization**: Recharts
-- **State Management**: React Context API & Hooks
+- **State Management**: State Lifting & Hooks
 
 ## ✨ Key Features
 
